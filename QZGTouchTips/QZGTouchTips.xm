@@ -35,9 +35,12 @@
             }
                 break;
             case UITouchPhaseMoved:
-//            {
-//                tipLayer.position = [touch locationInView:self];
-//            }
+            {
+                [CATransaction begin];
+                [CATransaction setDisableActions:YES];
+                tipLayer.position = [touch locationInView:self];
+                [CATransaction commit];
+            }
                 break;
             case UITouchPhaseCancelled:
             case UITouchPhaseEnded:

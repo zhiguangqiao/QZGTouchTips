@@ -61,9 +61,12 @@ static void _logos_method$_ungrouped$UIWindow$sendEvent$(_LOGOS_SELF_TYPE_NORMAL
             }
                 break;
             case UITouchPhaseMoved:
-
-
-
+            {
+                [CATransaction begin];
+                [CATransaction setDisableActions:YES];
+                tipLayer.position = [touch locationInView:self];
+                [CATransaction commit];
+            }
                 break;
             case UITouchPhaseCancelled:
             case UITouchPhaseEnded:
@@ -80,7 +83,7 @@ static void _logos_method$_ungrouped$UIWindow$sendEvent$(_LOGOS_SELF_TYPE_NORMAL
 }
 
 
-static __attribute__((constructor)) void _logosLocalCtor_7d006fd9(int __unused argc, char __unused **argv, char __unused **envp) {
+static __attribute__((constructor)) void _logosLocalCtor_3856978e(int __unused argc, char __unused **argv, char __unused **envp) {
     NSLog(@"------- inject success ---------");
     {Class _logos_class$_ungrouped$UIWindow = objc_getClass("UIWindow"); { MSHookMessageEx(_logos_class$_ungrouped$UIWindow, @selector(sendEvent:), (IMP)&_logos_method$_ungrouped$UIWindow$sendEvent$, (IMP*)&_logos_orig$_ungrouped$UIWindow$sendEvent$);}}
 }
