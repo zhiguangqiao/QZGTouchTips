@@ -11,6 +11,7 @@
 		98043A0625A57CFC00748686 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98043A0525A57CFC00748686 /* Foundation.framework */; };
 		98043A0825A57CFC00748686 /* CydiaSubstrate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98043A0725A57CFC00748686 /* CydiaSubstrate.framework */; };
 		98043A1725A57CFC00748686 /* QZGTouchTips.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98043A1625A57CFC00748686 /* QZGTouchTips.mm */; };
+		98043A5C25A6CB2300748686 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98043A5B25A6CB2300748686 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +24,10 @@
 		98043A1125A57CFC00748686 /* QZGTouchTipsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QZGTouchTipsIcon.png; sourceTree = "<group>"; };
 		98043A1225A57CFC00748686 /* QZGTouchTipsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QZGTouchTipsIcon@2x.png"; sourceTree = "<group>"; };
 		98043A1425A57CFC00748686 /* QZGTouchTips-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "QZGTouchTips-Prefix.pch"; path = "../QZGTouchTips-Prefix.pch"; sourceTree = "<group>"; };
-		98043A1525A57CFC00748686 /* QZGTouchTips.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = QZGTouchTips.xm; sourceTree = "<group>"; };
+		98043A1525A57CFC00748686 /* QZGTouchTips.xm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = QZGTouchTips.xm; sourceTree = "<group>"; };
 		98043A1625A57CFC00748686 /* QZGTouchTips.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QZGTouchTips.mm; sourceTree = "<group>"; };
 		98043A1A25A57CFC00748686 /* QZGTouchTips.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = QZGTouchTips.plist; sourceTree = "<group>"; };
+		98043A5B25A6CB2300748686 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98043A5C25A6CB2300748686 /* QuartzCore.framework in Frameworks */,
 				98043A0425A57CFC00748686 /* UIKit.framework in Frameworks */,
 				98043A0625A57CFC00748686 /* Foundation.framework in Frameworks */,
 				98043A0825A57CFC00748686 /* CydiaSubstrate.framework in Frameworks */,
@@ -62,6 +65,7 @@
 		98043A0225A57CFC00748686 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98043A5B25A6CB2300748686 /* QuartzCore.framework */,
 				98043A0325A57CFC00748686 /* UIKit.framework */,
 				98043A0525A57CFC00748686 /* Foundation.framework */,
 				98043A0725A57CFC00748686 /* CydiaSubstrate.framework */,
@@ -227,7 +231,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos\n";
 		};
 		980439FE25A57CFC00748686 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -244,7 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/opt/MonkeyDev/bin/md --xcbp";
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -274,7 +278,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
 				MonkeyDevPath = /opt/MonkeyDev;
 				MonkeyDevTheosPath = /opt/theos;
@@ -306,7 +310,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = "$(MonkeyDevTheosPath)/vendor/lib/**";
 				MonkeyDevPath = /opt/MonkeyDev;
 				MonkeyDevTheosPath = /opt/theos;
@@ -322,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9XQPD66TH;
@@ -330,15 +335,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QZGTouchTips/QZGTouchTips-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
 				MonkeyDevDeviceIP = "";
 				MonkeyDevDevicePassword = "";
-				MonkeyDevDevicePort = "";
+				MonkeyDevDevicePort = 2222;
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -348,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S9XQPD66TH;
@@ -356,12 +364,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QZGTouchTips/QZGTouchTips-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
 				MonkeyDevDeviceIP = "";
 				MonkeyDevDevicePassword = "";
-				MonkeyDevDevicePort = "";
+				MonkeyDevDevicePort = 2222;
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
